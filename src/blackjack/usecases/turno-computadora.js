@@ -7,12 +7,7 @@ import { crearCartaHTML, pedirCarta, valorCarta } from './';
  * @param {HTMLElement} divCartasComputadora HTML para mostrar las cartas
  * @param {Array<String>} deck
  */
-export const turnoComputadora = async (
-  puntosMinimos,
-  puntosHTML,
-  divCartasComputadora,
-  deck = []
-) => {
+export const turnoComputadora = (puntosMinimos, puntosHTML, divCartasComputadora, deck = []) => {
   if (!puntosMinimos) {
     throw new Error('puntos minimos es obligatorio');
   }
@@ -29,7 +24,7 @@ export const turnoComputadora = async (
     puntosHTML.innerText = puntosComputadora;
 
     const imgCarta = crearCartaHTML(carta);
-    await divCartasComputadora.append(imgCarta);
+    divCartasComputadora.append(imgCarta);
 
     if (puntosMinimos > 21) {
       break;
@@ -46,5 +41,5 @@ export const turnoComputadora = async (
     } else {
       alert('Computadora Gana');
     }
-  }, 500);
+  }, 1000);
 };
