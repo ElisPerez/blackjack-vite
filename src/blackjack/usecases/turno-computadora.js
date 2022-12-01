@@ -31,7 +31,11 @@ export const turnoComputadora = (puntosMinimos, puntosHTML, divCartasComputadora
     }
   } while (puntosComputadora < puntosMinimos && puntosMinimos <= 21);
 
-  setTimeout(() => {
+  validacion();
+};
+
+const validacion = () => {
+  // setTimeout(() => {
     if (puntosComputadora === puntosMinimos) {
       alert('Nadie gana :(');
     } else if (puntosMinimos > 21) {
@@ -41,5 +45,5 @@ export const turnoComputadora = (puntosMinimos, puntosHTML, divCartasComputadora
     } else {
       alert('Computadora Gana');
     }
-  }, 1000);
+  // }, 1000);
 };
